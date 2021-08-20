@@ -132,7 +132,26 @@ def encode():
         cc=''
     x.insert(0,dd) 
 
-
+def save_file():
+  if os.path.exists("morse.txt"):
+    f=open("morse.txt","a+")
+    xxx=i2.get()
+    xxxx=x.get()
+    f.write(xxx)
+    f.write(" <--> ")
+    f.write(xxxx)
+    f.write("\n")
+    f.close()
+  else:
+    f=open("morse.txt","x")
+    xxx=i2.get()
+    xxxx=x.get()
+    f.write(xxx)
+    f.write(" <--> ")
+    f.write(xxxx)
+    f.write("\n")
+    f.close()
+    
 ist = Menu(my_menu,tearoff=0,background="white")
 my_menu.add_command(label="About",command=fun)
 my_menu.add_command(label="Change Color",command=cgn)
@@ -156,5 +175,8 @@ bb2.place(x=260,y=115)
 x=Entry(width=40,font=("Arial",15))
 x.place(x=27,y=180)
 x.focus()
+
+btn = Button(text="Save to txt file",command=save_file)
+btn.place(x=385,y=215)
 
 root.mainloop()
