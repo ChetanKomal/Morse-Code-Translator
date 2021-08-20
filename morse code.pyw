@@ -1,6 +1,7 @@
 from tkinter import *
 from tkinter import messagebox
 import random
+import os
 root = Tk()
 root.title("Morse Code Translator")
 root.geometry("500x270")
@@ -138,7 +139,7 @@ def save_file():
     xxx=i2.get()
     xxxx=x.get()
     f.write(xxx)
-    f.write(" <--> ")
+    f.write(" ==> ")
     f.write(xxxx)
     f.write("\n")
     f.close()
